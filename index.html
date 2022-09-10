@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Interactive card details form</title>
+</head>
+<body>
+  <img class="background-img" src="images/bg-main-desktop.png" alt="">
+  <div class="app">
+    <div class="cards">
+      <div class="front-card">
+        <img src="images/bg-card-front.png" alt="">
+        <img id="card-logo" src="images/card-logo.png" alt="">
+        <div class="card-number">0000 0000 0000 0000</div>
+        <div class="card-name">JANE APPLESEED</div>
+        <div class="card-date"><span class="card-MM">00</span>/<span class="card-YY">00</span></div>
+      </div>
+      <div class="back-card">
+        <img src="images/bg-card-back.png" alt="">
+        <span class="card-CVC">000</span> 
+      </div>
+    </div>
+    <div class="container">
+      <form action="">
+        <div class="label">CARDHOLDER NAME</div>
+        <input id="input-name" type="text" placeholder="e.g. Jane Appleseed">
+        <div class="text"></div>
+
+        <div class="label">CARD NUMBER</div>
+        <input id="input-number" type="number" placeholder="e.g. 1234 5678 9123 0000">
+        <div class="text"></div>
+
+        <div class="flex">
+          
+          <div>
+            <div class="label">EXP. DATE (MM/YY)</div>
+            <input class="input-date input-MM" type="number" placeholder="MM">
+            <input class="input-date input-YY" type="number" placeholder="YY">
+            <div class="text"></div>
+          </div>
+
+          <div class="second-flex">
+            <div class="label">CVC</div>
+            <input id="input-CVC" type="number" placeholder="e.g. 123">
+            <div class="text"></div>
+          </div>  
+        </div>
+        <button id="confirm-btn">Confirm</button>
+      </form>
+
+      <!-- Completed state start -->
+      <div class="complete-state hide">
+        <img src="images/icon-complete.png">
+        <h1>Thank you!</h1>
+        <p>We've added your card details</p>
+        <button id="continue-btn">Continue</button>
+      </div>
+  
+    </div>
+  </div>
+  
+  <script src="./script.js"></script>
+</body>
+</html>
