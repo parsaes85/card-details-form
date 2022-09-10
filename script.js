@@ -30,6 +30,14 @@ function inputCheck(input,error,emptyText,text,num){
     }
 }
 
+function inputEmptyCheck(input){
+    if(input.value.length == 0){
+        input.classList.add('invalid')
+    }else{
+        input.classList.remove('invalid')
+    }
+}
+
 inputName.addEventListener('input',(e)=>{
     let name = inputName.value.toUpperCase()
     cardName.innerText = name
@@ -56,6 +64,12 @@ inputYY.addEventListener('input',(e)=>{
     inputCheck(inputYY,e.target.nextElementSibling,'cant be blank','incurrect Date!',3)
 })
 confirmButton.addEventListener('click',(e)=>{
+    inputEmptyCheck(inputName)
+    inputEmptyCheck(inputNumber)
+    inputEmptyCheck(inputMM)
+    inputEmptyCheck(inputYY)
+    inputEmptyCheck(inputCVC)
+
     e.preventDefault()
     if(document.querySelector('form .invalid') == null){
         form.classList.add('hide')
@@ -66,6 +80,14 @@ continueButton.addEventListener('click',(e)=>{
     form.classList.remove('hide')
     completeState.classList.add('hide')
     location.reload()
+})
+
+window.addEventListener('load',()=>{
+    inputName.value = ''
+    inputNumber.value = ''
+    inputMM.value = ''
+    inputYY.value = ''
+    inputCVC.value = ''
 })
 
 
